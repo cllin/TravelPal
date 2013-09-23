@@ -1,20 +1,24 @@
 package com.cllin.emirates.hackathon.travelpal.activity;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TaskActivity extends Activity implements OnClickListener {
 	private static final String KEY_MISSION_ID = "mission_id";
 	private static final String KEY_TASK_ID = "task_id";
+	private static final String KEY_IMAGE_ID = "image_id";
 	
-	private static final int MISSION_ID_MOUNTAIN_VIEW = 0;
+	private static final int MISSION_ID_SANFRANCISCO = 0;
 	private static final int MISSION_ID_PALO_ALTO = 1;
 	private static final int MISSION_ID_SUNNYVALE = 2;
 	
@@ -30,6 +34,7 @@ public class TaskActivity extends Activity implements OnClickListener {
 	
 	private int mTaskId = -1;
 	private int mMissionId = -1;
+	private int mImageId = -1;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +51,7 @@ public class TaskActivity extends Activity implements OnClickListener {
 		Bundle bundle = this.getIntent().getExtras();
 		mMissionId = bundle.getInt(KEY_MISSION_ID);
 		mTaskId = bundle.getInt(KEY_TASK_ID);
+		mImageId = bundle.getInt(KEY_IMAGE_ID);
 	}
 	
 	private void setView(){
@@ -55,8 +61,8 @@ public class TaskActivity extends Activity implements OnClickListener {
 		
 		String[] tasks = null;
 		switch(mMissionId){
-		case MISSION_ID_MOUNTAIN_VIEW:
-			tasks = getResources().getStringArray(R.array.task_list_mountain_view);
+		case MISSION_ID_SANFRANCISCO:
+			tasks = getResources().getStringArray(R.array.task_list_sanfrancisco);
 			break;
 		case MISSION_ID_PALO_ALTO:
 			tasks = getResources().getStringArray(R.array.task_list_palo_alto);
@@ -71,13 +77,32 @@ public class TaskActivity extends Activity implements OnClickListener {
 //		BUTTON
 		Button cameraBtn = (Button)findViewById(R.id.button_task_camera);
 		Button locationBtn = (Button)findViewById(R.id.button_task_location);
+		Button syncBtn = (Button)findViewById(R.id.button_task_sync);
 		
 		cameraBtn.setOnClickListener(TaskActivity.this);
 		locationBtn.setOnClickListener(TaskActivity.this);
+		syncBtn.setOnClickListener(TaskActivity.this);
 		
 //		IMAGEVIEW
 		ImageView imageView = (ImageView)findViewById(R.id.imageview_task);
-		imageView.setImageResource(R.drawable.mountain_view);
+		imageView.setImageResource(mImageId);
+	}
+	
+	private void showToast(){
+		final ProgressDialog progressDialog = ProgressDialog.show(this, "", "Please wait...");
+			new Thread() {
+				public void run() {
+					try{
+						synchronized(this){
+		                    wait(5000);
+		                }
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+					progressDialog.dismiss();
+				}
+			}.start();
+		
 	}
 
 	@Override
@@ -89,6 +114,9 @@ public class TaskActivity extends Activity implements OnClickListener {
 			intent.setClass(TaskActivity.this, CameraActivity.class);
 		} else if (id == R.id.button_task_location) {
 			intent.setClass(TaskActivity.this, LocationActivity.class);
+		} else if (id == R.id.button_task_sync) {
+			showToast();
+			return;
 		} else {
 			return;
 		}

@@ -16,11 +16,14 @@ import android.widget.SimpleAdapter;
 public class MissionActivity extends Activity implements OnItemClickListener{
 	private static final String KEY_MISSION_ID = "mission_id";
 	private static final String KEY_TASK_ID = "task_id";
+	private static final String KEY_IMAGE_ID = "image_id";
 	
-	private static final int MISSION_ID_MOUNTAIN_VIEW = 0;
+	private static final int MISSION_ID_SANFRANCISCO = 0;
 	private static final int MISSION_ID_PALO_ALTO = 1;
 	private static final int MISSION_ID_SUNNYVALE = 2;
 
+	private static final int[] images = {R.drawable.golden_gate, R.drawable.fishermans_wharf, R.drawable.fine_arts_museum}; 
+	
 	private int mMissionId = -1;
 	
 	@Override
@@ -38,15 +41,14 @@ public class MissionActivity extends Activity implements OnItemClickListener{
 		
 		SimpleAdapter adapter;
 		String[] tasks = null;
-//		TODO
 		String[] descriptions = getResources().getStringArray(R.array.task_list_description);
 		
 		Bundle bundle = this.getIntent().getExtras();
 		mMissionId = bundle.getInt(KEY_MISSION_ID);
 		
 		switch(mMissionId){
-		case MISSION_ID_MOUNTAIN_VIEW:
-			tasks = getResources().getStringArray(R.array.task_list_mountain_view);
+		case MISSION_ID_SANFRANCISCO:
+			tasks = getResources().getStringArray(R.array.task_list_sanfrancisco);
 			break;
 		case MISSION_ID_PALO_ALTO:
 			tasks = getResources().getStringArray(R.array.task_list_palo_alto);
@@ -58,13 +60,13 @@ public class MissionActivity extends Activity implements OnItemClickListener{
 		
 		for(int i = 0; i < tasks.length; i++){
 			HashMap<String,Object> item = new HashMap<String,Object>();
-			item.put("pic", R.drawable.mountain_view);
+			item.put("image", images[i]);
 			item.put("task", tasks[i]);
 			item.put("description", descriptions[i]);
 			list.add( item );
 		}
 		
-		adapter = new SimpleAdapter(this, list, R.layout.layout_list, new String[] {"pic", "task", "description" }, 
+		adapter = new SimpleAdapter(this, list, R.layout.layout_list, new String[] {"image", "task", "description" }, 
 				new int[] {R.id.list_image, R.id.list_title, R.id.list_description});
 		
 		listView.setAdapter(adapter);
@@ -77,6 +79,7 @@ public class MissionActivity extends Activity implements OnItemClickListener{
 		Bundle bundle = new Bundle();
 		bundle.putInt(KEY_MISSION_ID, mMissionId);
         bundle.putInt(KEY_TASK_ID, idx);
+        bundle.putInt(KEY_IMAGE_ID, images[idx]);
         intent.putExtras(bundle);
         
         startActivity(intent);

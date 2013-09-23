@@ -1,14 +1,18 @@
 package com.cllin.emirates.hackathon.travelpal.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.Button;
 
-public class LocationActivity extends Activity implements LocationListener{
+public class LocationActivity extends Activity implements LocationListener, OnClickListener{
 	private static final String MSG_TAG = "LocationActivity";
 	
 	private LocationManager mLocationManager;
@@ -24,6 +28,8 @@ public class LocationActivity extends Activity implements LocationListener{
 	}
 	
 	private void setView(){
+		Button checkBtn = (Button)findViewById(R.id.button_location_check);
+		checkBtn.setOnClickListener(LocationActivity.this);
 	}
 	
 	private void setLocation(){
@@ -69,5 +75,14 @@ public class LocationActivity extends Activity implements LocationListener{
 	public void onStatusChanged(String provider, int status, Bundle extras) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch(v.getId()){
+		case R.id.button_location_check:
+	        finish();
+			break;
+		}
 	}
 }

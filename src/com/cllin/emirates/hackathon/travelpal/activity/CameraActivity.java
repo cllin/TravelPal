@@ -63,15 +63,15 @@ public class CameraActivity extends Activity implements Callback, OnClickListene
 	}
 	
 	private void goBack(){
-		Intent intent = new Intent();
-		intent.setClass(CameraActivity.this, TaskActivity.class);
-		
-		Bundle bundle = new Bundle();
-		bundle.putInt(KEY_MISSION_ID, mMissionId);
-        bundle.putInt(KEY_TASK_ID, mTaskId);
-        intent.putExtras(bundle);
-		
-		startActivity(intent);
+//		Intent intent = new Intent();
+//		intent.setClass(CameraActivity.this, TaskActivity.class);
+//		
+//		Bundle bundle = new Bundle();
+//		bundle.putInt(KEY_MISSION_ID, mMissionId);
+//        bundle.putInt(KEY_TASK_ID, mTaskId);
+//        intent.putExtras(bundle);
+//		
+//		startActivity(intent);
 		
 		finish();
 	}

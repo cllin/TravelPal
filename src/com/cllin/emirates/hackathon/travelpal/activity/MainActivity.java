@@ -11,9 +11,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 public class MainActivity extends Activity{
 //	TODO this should be in application level
@@ -30,11 +30,12 @@ public class MainActivity extends Activity{
 		setContentView(R.layout.activity_main);
 		GridView gridView = (GridView) findViewById(R.id.gridView);
 		final String[] list = getResources().getStringArray(R.array.mission_list);
+		final int[] images = {R.drawable.sanfrancisco, R.drawable.newyork, R.drawable.honolulu, R.drawable.seattle, R.drawable.vegas};
 		
 		List<Map<String, Object>> items = new ArrayList<Map<String,Object>>();
 		for (int i = 0; i < list.length; i++) {
 			Map<String, Object> item = new HashMap<String, Object>();
-			item.put("image", R.drawable.mountain_view);
+			item.put("image", images[i]);
 			item.put("mission", list[i]);
 			items.add(item);
 		}
@@ -48,6 +49,11 @@ public class MainActivity extends Activity{
 		gridView.setOnItemClickListener(new GridView.OnItemClickListener(){
 			@Override
 			public void onItemClick(AdapterView<?> adapterView,View view,int position,long id) {
+				if(position > 0){
+					Toast.makeText(getApplicationContext(), "Sorry, the mission is not ready yet!", Toast.LENGTH_SHORT).show();
+					return;
+				}
+				
 				switchActivity(position);
 			}
 		});

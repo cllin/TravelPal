@@ -3,14 +3,16 @@
 	<string name="app_name">TravelPal</string>
 	<string name="action_settings">Settings</string>
 	<string-array name="mission_list">
-		<item>Mountain View</item>
-		<item>Palo Alto</item>
-		<item>Sunnyvale</item>
+		<item>San Francisco</item>
+		<item>New York</item>
+		<item>Honolulu</item>
+		<item>Seattle</item>
+		<item>Las Vegas</item>
 	</string-array>
-	<string-array name="task_list_mountain_view">
-		<item>Castro Street</item>
-		<item>Google Park</item>
-		<item>Shoreline Amphitheatre</item>
+	<string-array name="task_list_sanfrancisco">
+		<item>Golden Gate Bridge</item>
+		<item>Fishermans Wharf</item>
+		<item>Fine Arts Museums</item>
 	</string-array>	
 	<string-array name="task_list_palo_alto">
 		<item>Stanford University</item>
@@ -27,6 +29,7 @@
 	<string name="location_default">This is LocationActivity</string>
 	<string name="button_goto_camera">Camera</string>
 	<string name="button_goto_location">Location</string>
+	<string name="button_sync">Sync</string>
 	<string name="mission_activity_title">Missions</string>
 	<string-array name="task_list_description">
 		<item>The most beloved place in the city!</item>
@@ -35,7 +38,7 @@
 	</string-array>
 	<string name="searchbar_hint">Looking for a mission?</string>
 	<string name="task_instruction_title">To finish this task, you should</string>
-	<string name="task_instruction_1">Take a picture with the famous statue</string>	
-	<string name="task_instruction_2">Locate yourself in front of the main gate</string>
+	<string name="task_instruction_1">Take a picture with the famous chowder from BOUDIN</string>	
+	<string name="task_instruction_2">Locate yourself in center of the BRIDGE</string>
 	
 </resources>
