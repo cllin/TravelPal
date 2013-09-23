@@ -44,10 +44,10 @@ public class CameraActivity extends Activity implements Callback, OnClickListene
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_camera);
 		this.setRequestedOrientation(1);
-		findControl();
 		
 		getBundle();
 		setView();
+		findControl();
 	}
 	
 	private void getBundle(){
@@ -110,10 +110,10 @@ public class CameraActivity extends Activity implements Callback, OnClickListene
 
 	@Override
 	public void onClick(View v) {
-//		int id = v.getId();
-//		if (id == R.id.button_camera_take) {
-//			mCamera.takePicture(null, null, mPictureCallback);
-//		}
+		int id = v.getId();
+		if (id == R.id.button_camera_take) {
+			mCamera.takePicture(null, null, mPictureCallback);
+		}
 	}
 	
 	private PictureCallback mPictureCallback = new PictureCallback() {

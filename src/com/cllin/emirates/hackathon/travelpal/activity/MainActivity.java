@@ -1,33 +1,56 @@
 package com.cllin.emirates.hackathon.travelpal.activity;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.GridView;
+import android.widget.SimpleAdapter;
 
-public class MainActivity extends Activity implements OnItemSelectedListener{
+public class MainActivity extends Activity{
 //	TODO this should be in application level
 	private static final String KEY_MISSION_ID = "mission_id";
-	private static final int SPINNER_DEFAULT_POSITION = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setView();
 	}
 	
 	private void setView(){
 		setContentView(R.layout.activity_main);
-		Spinner spinner = (Spinner) findViewById(R.id.spinner_select_mission);
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-		        R.array.mission_list, android.R.layout.simple_spinner_item);
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinner.setAdapter(adapter);
-		spinner.setOnItemSelectedListener(this);
+		GridView gridView = (GridView) findViewById(R.id.gridView);
+		final String[] list = getResources().getStringArray(R.array.mission_list);
+		
+		List<Map<String, Object>> items = new ArrayList<Map<String,Object>>();
+		for (int i = 0; i < list.length; i++) {
+			Map<String, Object> item = new HashMap<String, Object>();
+			item.put("image", R.drawable.mountain_view);
+			item.put("mission", list[i]);
+			items.add(item);
+		}
+		
+		SimpleAdapter adapter = new SimpleAdapter(this, items, R.layout.layout_grid, 
+				new String[]{"image", "mission"}, new int[]{R.id.grid_image, R.id.grid_text});
+		
+		
+		gridView.setNumColumns(2);
+		gridView.setAdapter(adapter);
+		gridView.setOnItemClickListener(new GridView.OnItemClickListener(){
+			@Override
+			public void onItemClick(AdapterView<?> adapterView,View view,int position,long id) {
+				switchActivity(position);
+			}
+		});
 	}
 	
 	private void switchActivity(long idx){
@@ -38,17 +61,5 @@ public class MainActivity extends Activity implements OnItemSelectedListener{
         intent.putExtras(bundle);
         
         startActivity(intent);
-	}
-
-	@Override
-	public void onItemSelected(AdapterView<?> adapter, View view, int position, long id) {
-		if(position != SPINNER_DEFAULT_POSITION){
-			switchActivity(position);
-		}
-	}
-
-	@Override
-	public void onNothingSelected(AdapterView<?> arg0) {
-		// TODO Auto-generated method stub
 	}
 }

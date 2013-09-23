@@ -1,7 +1,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:id="@+id/frameLayout1"
 	android:layout_height="fill_parent"
-	android:layout_width="fill_parent">
+	android:layout_width="fill_parent"
+	android:background="?android:attr/dividerVertical">
 	
 	<SurfaceView
 		android:id="@+id/cameraSurfaceView"
@@ -11,8 +12,9 @@
 	
 	<Button
 		android:id="@+id/button_camera_take"
+		android:drawableTop="@drawable/camera"
+		android:background="?android:attr/selectableItemBackground"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_gravity="bottom|center_horizontal"
-		android:text="Button" />
+		android:layout_gravity="bottom|center_horizontal"/>
 </FrameLayout>

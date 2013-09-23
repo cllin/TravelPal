@@ -6,6 +6,7 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Window;
 
 public class LocationActivity extends Activity implements LocationListener{
 	private static final String MSG_TAG = "LocationActivity";
@@ -15,6 +16,7 @@ public class LocationActivity extends Activity implements LocationListener{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_location);
 		
 		setView();

@@ -4,18 +4,35 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/textview_mission_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/mission_activity_instruction">
-    </TextView>"
+    <LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="#2D373f"
+		android:orientation="vertical"
+		android:gravity="center_vertical"
+		android:layout_weight="1">
+		<TextView
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="40sp"
+        	android:textColor="#ffffff"
+        	android:text="@string/mission_activity_title"/>
+	    <TextView
+    	    android:id="@+id/textview_mission_description"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:textSize="25sp"
+        	android:textColor="#A3B0B7"
+        	android:text="@string/mission_activity_instruction"/>
+    </LinearLayout>
+    
 
     <ListView
         android:id="@+id/listview_tasks"
         android:layout_gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+		android:layout_weight="4">
     </ListView>
 
 </LinearLayout>

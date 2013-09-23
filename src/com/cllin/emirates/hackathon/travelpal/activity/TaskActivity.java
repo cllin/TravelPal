@@ -5,16 +5,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class TaskActivity extends Activity implements OnClickListener {
 	private static final String KEY_MISSION_ID = "mission_id";
 	private static final String KEY_TASK_ID = "task_id";
 	
-	private static final int MISSION_ID_MOUNTAIN_VIEW = 1;
-	private static final int MISSION_ID_PALO_ALTO = 2;
-	private static final int MISSION_ID_SUNNYVALE = 3;
+	private static final int MISSION_ID_MOUNTAIN_VIEW = 0;
+	private static final int MISSION_ID_PALO_ALTO = 1;
+	private static final int MISSION_ID_SUNNYVALE = 2;
 	
 //	private static final int TASK_ID_CASTRO_STREERT = 1;
 //	private static final int TASK_ID_GOOGLE_PARK = 2;
@@ -32,6 +34,8 @@ public class TaskActivity extends Activity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
 		setContentView(R.layout.activity_task);
 		
 		getBundle();
@@ -45,6 +49,7 @@ public class TaskActivity extends Activity implements OnClickListener {
 	}
 	
 	private void setView(){
+		
 //		TEXTVIEW
 		TextView textview = (TextView)findViewById(R.id.textview_task);
 		
@@ -69,6 +74,10 @@ public class TaskActivity extends Activity implements OnClickListener {
 		
 		cameraBtn.setOnClickListener(TaskActivity.this);
 		locationBtn.setOnClickListener(TaskActivity.this);
+		
+//		IMAGEVIEW
+		ImageView imageView = (ImageView)findViewById(R.id.imageview_task);
+		imageView.setImageResource(R.drawable.mountain_view);
 	}
 
 	@Override
