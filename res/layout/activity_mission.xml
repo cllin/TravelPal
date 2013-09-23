@@ -2,27 +2,31 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#1EBBA6"
     android:orientation="vertical" >
 
     <LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:background="#2D373f"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
 		android:orientation="vertical"
 		android:gravity="center_vertical"
-		android:layout_weight="1">
+		android:background="@drawable/mission_sanfrancisco"
+		android:layout_weight="6">
 		<TextView
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"
-        	android:textSize="40sp"
-        	android:textColor="#ffffff"
+        	android:textSize="36sp"
+        	android:textColor="#EE7836"
+			android:fontFamily="sans-serif-condensed"
+        	android:textStyle="bold"
         	android:text="@string/mission_activity_title"/>
 	    <TextView
     	    android:id="@+id/textview_mission_description"
         	android:layout_width="wrap_content"
         	android:layout_height="wrap_content"
-        	android:textSize="25sp"
+        	android:textSize="20sp"
         	android:textColor="#A3B0B7"
+			android:fontFamily="sans-serif-light"
         	android:text="@string/mission_activity_instruction"/>
     </LinearLayout>
     
@@ -30,9 +34,11 @@
     <ListView
         android:id="@+id/listview_tasks"
         android:layout_gravity="center_horizontal"
+        android:background="@drawable/listview_sanfrancisco"
+        android:layout_marginTop="5pt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-		android:layout_weight="4">
+        android:layout_height="match_parent"
+		android:layout_weight="1">
     </ListView>
 
 </LinearLayout>

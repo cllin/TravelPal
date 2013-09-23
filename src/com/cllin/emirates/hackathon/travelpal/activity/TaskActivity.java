@@ -4,14 +4,13 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class TaskActivity extends Activity implements OnClickListener {
 	private static final String KEY_MISSION_ID = "mission_id";
@@ -21,16 +20,6 @@ public class TaskActivity extends Activity implements OnClickListener {
 	private static final int MISSION_ID_SANFRANCISCO = 0;
 	private static final int MISSION_ID_PALO_ALTO = 1;
 	private static final int MISSION_ID_SUNNYVALE = 2;
-	
-//	private static final int TASK_ID_CASTRO_STREERT = 1;
-//	private static final int TASK_ID_GOOGLE_PARK = 2;
-//	private static final int TASK_ID_SHORELINE_AMPHITHEATRE = 3;
-//	private static final int TASK_ID_STANFORD_UNIVERSITY = 4;
-//	private static final int TASK_ID_DOWNTOWN_PALO_ALTO = 5;
-//	private static final int TASK_ID_HP_GARAGE = 6;
-//	private static final int TASK_ID_DOWNTOWN_SUNNYVALE = 7;
-//	private static final int TASK_ID_YAHOO = 8;
-//	private static final int TASK_ID_LOCKHEED_MARTIN = 9;
 	
 	private int mTaskId = -1;
 	private int mMissionId = -1;
@@ -83,9 +72,10 @@ public class TaskActivity extends Activity implements OnClickListener {
 		locationBtn.setOnClickListener(TaskActivity.this);
 		syncBtn.setOnClickListener(TaskActivity.this);
 		
-//		IMAGEVIEW
-		ImageView imageView = (ImageView)findViewById(R.id.imageview_task);
-		imageView.setImageResource(mImageId);
+//		TITLE
+		LinearLayout title = (LinearLayout)findViewById(R.id.layout_task_title);
+		title.setBackgroundResource(mImageId);
+		title.setAlpha(63);
 	}
 	
 	private void showToast(){

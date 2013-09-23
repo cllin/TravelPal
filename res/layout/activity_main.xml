@@ -7,16 +7,18 @@
 	tools:context=".MainActivity">
 	
 	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
 		android:orientation="horizontal"
 		android:gravity="center_vertical"
-		android:background="#aff2e9">
+		android:layout_weight="6"
+		android:background="@drawable/search_bar">"
 		<EditText
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
 			android:layout_weight="1"
 			android:hint="@string/searchbar_hint"
+			android:fontFamily="sans-serif-thin"
 			android:ems="20" >
 			<requestFocus />
 		</EditText>
@@ -27,20 +29,17 @@
 			android:drawableBottom="@drawable/search_grey"
 			android:background="?android:attr/selectableItemBackground"/>
 	</LinearLayout>
-
-	<TextView
-	    android:layout_width="wrap_content"
-	    android:layout_height="wrap_content"
-	    android:textSize="20px"
-	    android:text=" " />
     
     <GridView
 		android:id="@+id/gridView"
 		android:layout_gravity="bottom"
 		android:gravity="center"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_weight="1"
+		android:layout_marginTop="5pt"
 		android:horizontalSpacing="10dip"
-		android:verticalSpacing="10dip">
+		android:verticalSpacing="10dip"
+		android:background="@drawable/grid_background">
 	</GridView>
 </LinearLayout>

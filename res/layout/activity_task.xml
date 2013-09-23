@@ -5,14 +5,14 @@
     android:orientation="vertical" >
 
 	<LinearLayout
+	    android:id="@+id/layout_task_title"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:background="#2D373f"
+		android:layout_height="match_parent"
 		android:orientation="vertical"
-		android:layout_weight="2">
+		android:layout_weight="1">
 	    <TextView
 			android:id="@+id/textview_task"
-			android:textColor="#ffffff"
+			android:textColor="#FFFFFF"
 			android:typeface="normal"
 			android:textSize="40sp"
 			android:layout_width="wrap_content"
@@ -40,48 +40,48 @@
 			android:textColor="#ffffff"
 			android:textSize="24sp"
 			android:gravity="bottom"
+			android:fontFamily="sans-serif-light"
 			android:text="@string/task_instruction_title" />
     </LinearLayout>
 
 	<LinearLayout
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
 		android:gravity="center_vertical"
-		android:layout_weight="2" >
-		<ImageView
-		    android:id="@+id/imageview_task"
-			android:layout_width="160dp"
-			android:layout_height="120dp"
-		    android:src="@drawable/ic_launcher" />
-		<LinearLayout
-		    android:layout_width="wrap_content"
-		    android:layout_height="match_parent"
-		    android:gravity="center"
-		    android:orientation="vertical">
-			<TextView
-				android:id="@+id/textview_task_description_1"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:textColor="#2D373f"
-				android:textSize="14sp"
-				android:text="@string/task_instruction_1" />
-			<TextView
-				android:id="@+id/textview_task_description_2"
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:textColor="#2D373f"
-				android:textSize="14sp"
-				android:text="@string/task_instruction_2" />"
-		</LinearLayout>
+		android:layout_marginLeft="5pt"
+		android:layout_weight="1" >
+		<TextView
+			android:id="@+id/textview_task_description_1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#2D373f"
+			android:textSize="24sp"
+			android:fontFamily="sans-serif-light"
+			android:text="@string/task_instruction_1" />
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#EE7836"
+			android:textSize="24sp"
+			android:fontFamily="sans-serif-thin"
+			android:text="@string/task_instruction_and" />
+		<TextView
+			android:id="@+id/textview_task_description_2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#2D373f"
+			android:textSize="24sp"
+			android:fontFamily="sans-serif-light"
+			android:text="@string/task_instruction_2" />
 	</LinearLayout>
-
 	
 	<LinearLayout
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
+		android:layout_height="match_parent"
 		android:gravity="center"
 		android:background="?android:attr/dividerVertical"
+		android:orientation="horizontal"
 		android:layout_weight="1">
 		<Button
 			android:id="@+id/button_task_camera"
@@ -90,14 +90,16 @@
 			android:background="?android:attr/selectableItemBackground"
 			android:drawableTop="@drawable/camera_grey"
 			android:layout_weight="1"
+			android:fontFamily="sans-serif-light"
 			android:text="@string/button_goto_camera" />
 		<Button
 			android:id="@+id/button_task_location"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:background="?android:attr/selectableItemBackground"
-			android:drawableTop="@drawable/location_grey"
+			android:drawableTop="@drawable/locate_red"
 			android:layout_weight="1"
+			android:fontFamily="sans-serif-light"
 			android:text="@string/button_goto_location" />
 		<Button
 			android:id="@+id/button_task_sync"
@@ -106,6 +108,7 @@
 			android:background="?android:attr/selectableItemBackground"
 			android:drawableTop="@drawable/sync"
 			android:layout_weight="1"
+			android:fontFamily="sans-serif-light"
 			android:text="@string/button_sync" />
 	</LinearLayout>
 </LinearLayout>

@@ -16,8 +16,9 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 public class MainActivity extends Activity{
-//	TODO this should be in application level
 	private static final String KEY_MISSION_ID = "mission_id";
+	private final int[] images = {R.drawable.sanfrancisco, R.drawable.newyork, 
+			R.drawable.honolulu, R.drawable.seattle, R.drawable.vegas};
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,6 @@ public class MainActivity extends Activity{
 		setContentView(R.layout.activity_main);
 		GridView gridView = (GridView) findViewById(R.id.gridView);
 		final String[] list = getResources().getStringArray(R.array.mission_list);
-		final int[] images = {R.drawable.sanfrancisco, R.drawable.newyork, R.drawable.honolulu, R.drawable.seattle, R.drawable.vegas};
 		
 		List<Map<String, Object>> items = new ArrayList<Map<String,Object>>();
 		for (int i = 0; i < list.length; i++) {
@@ -42,7 +42,6 @@ public class MainActivity extends Activity{
 		
 		SimpleAdapter adapter = new SimpleAdapter(this, items, R.layout.layout_grid, 
 				new String[]{"image", "mission"}, new int[]{R.id.grid_image, R.id.grid_text});
-		
 		
 		gridView.setNumColumns(2);
 		gridView.setAdapter(adapter);

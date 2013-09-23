@@ -24,7 +24,7 @@
 		<item>Yahoo!</item>
 		<item>Lockheed Martin</item>
 	</string-array>
-	<string name="mission_activity_instruction">Choose one and play!</string>
+	<string name="mission_activity_instruction">Choose one and enjoy!</string>
 	<string name="camera_default">This is CameraActivity</string>
 	<string name="location_default">This is LocationActivity</string>
 	<string name="button_goto_camera">Camera</string>
@@ -38,7 +38,8 @@
 	</string-array>
 	<string name="searchbar_hint">Looking for a mission?</string>
 	<string name="task_instruction_title">To finish this task, you should</string>
-	<string name="task_instruction_1">Take a picture with the famous chowder from BOUDIN</string>	
-	<string name="task_instruction_2">Locate yourself in center of the BRIDGE</string>
+	<string name="task_instruction_1">Take a picture with the famous chowder from Boudin</string>	
+	<string name="task_instruction_2">Locate yourself in center of the bridge</string>
+	<string name="task_instruction_and">AND</string>
 	
 </resources>
