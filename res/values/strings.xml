@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">TravelPal</string>
+	<string name="action_settings">Settings</string>
+	<string-array name="mission_list">
+		<item>Select a mission</item>
+		<item>Mountain View</item>
+		<item>Palo Alto</item>
+		<item>Sunnyvale</item>
+	</string-array>
+	<string-array name="task_list_mountain_view">
+		<item>Castro Street</item>
+		<item>Google Park</item>
+		<item>Shoreline Amphitheatre</item>
+	</string-array>	
+	<string-array name="task_list_palo_alto">
+		<item>Stanford University</item>
+		<item>Downtown Palo Alto</item>
+		<item>HP Garage</item>
+	</string-array>	
+	<string-array name="task_list_sunnyavle">
+		<item>Downtown Sunnyvale</item>
+		<item>Yahoo!</item>
+		<item>Lockheed Martin</item>
+	</string-array>
+	<string name="mission_activity_instruction">Choose a task you want to play now!</string>
+	<string name="camera_default">This is CameraActivity</string>
+	<string name="location_default">This is LocationActivity</string>
+	<string name="button_goto_camera">Camera</string>
+	<string name="button_goto_location">Location</string>	
+	
+</resources>
