@@ -6,7 +6,7 @@ TravelPal was built by Ching-Lun Lin, David Lee, and Jeff Hsu. Jeff worked for w
 
 This is only the mobile part of the application.
 
-More more information, please feel free to contact me.
+Please feel free to contact me for further information.
 
 ------
 2013, Ching-Lun Lin, clallenlin@gmail.com
