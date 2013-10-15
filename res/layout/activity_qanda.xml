@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:layout_weight="3">
+		<ImageView
+			android:id="@+id/imageview_qanda"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"/>
+    </LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:gravity="center_vertical"
+		android:layout_marginLeft="5pt"
+		android:layout_weight="2" >
+	    <TextView
+			android:id="@+id/textview_qanda"
+			android:textColor="#000000"
+			android:typeface="normal"
+			android:textSize="40sp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"/>
+	    <!-- TODO -->
+	    <TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#000000"
+			android:fontFamily="sans-serif-light"
+			android:text="------" />
+	    <TextView
+			android:id="@+id/textview_qanda_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#000000"
+			android:textSize="18sp"
+			android:fontFamily="sans-serif-light"
+			android:text="@string/qanda_instruction_title" />
+	    <!-- TODO Radiobutton-->
+	</LinearLayout>
+	
+<!-- TODO Buttons-->
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:gravity="center"
+		android:orientation="horizontal"
+		android:layout_weight="4">
+	</LinearLayout>
+</LinearLayout>

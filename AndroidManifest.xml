@@ -39,14 +39,17 @@
 				<category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.cllin.emirates.hackathon.travelpal.activity.MissionActivity"></activity>
+        <activity
+			android:name="com.cllin.emirates.hackathon.travelpal.activity.MissionActivity"
+			android:windowSoftInputMode="adjustPan"></activity>
         <activity android:name="com.cllin.emirates.hackathon.travelpal.activity.TaskActivity"></activity>
         <activity android:name="com.cllin.emirates.hackathon.travelpal.activity.CameraActivity"></activity>
         <activity android:name="com.cllin.emirates.hackathon.travelpal.activity.LocationActivity"></activity>
         
-	<meta-data
+	<activity android:name="QAndAActivity"></activity><meta-data
 		android:name="com.google.android.maps.v2.API_KEY"
 		android:value="AIzaSyCbdtQKyQ1sx51L8iltATogFVlHwgUS4eo" />
+	
 	</application>
 
 </manifest>

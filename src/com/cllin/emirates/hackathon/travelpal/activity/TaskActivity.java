@@ -17,10 +17,6 @@ public class TaskActivity extends Activity implements OnClickListener {
 	private static final String KEY_TASK_ID = "task_id";
 	private static final String KEY_IMAGE_ID = "image_id";
 	
-	private static final int MISSION_ID_SANFRANCISCO = 0;
-	private static final int MISSION_ID_PALO_ALTO = 1;
-	private static final int MISSION_ID_SUNNYVALE = 2;
-	
 	private int mTaskId = -1;
 	private int mMissionId = -1;
 	private int mImageId = -1;
@@ -42,40 +38,26 @@ public class TaskActivity extends Activity implements OnClickListener {
 		mTaskId = bundle.getInt(KEY_TASK_ID);
 		mImageId = bundle.getInt(KEY_IMAGE_ID);
 	}
-	
+
+//	TODO
 	private void setView(){
+		ImageView imageView = (ImageView)findViewById(R.id.imageview_task);
+		imageView.setBackgroundResource(R.drawable.brooklyn_bridge);
 		
-//		TEXTVIEW
 		TextView textview = (TextView)findViewById(R.id.textview_task);
-		
-		String[] tasks = null;
-		switch(mMissionId){
-		case MISSION_ID_SANFRANCISCO:
-			tasks = getResources().getStringArray(R.array.task_list_sanfrancisco);
-			break;
-		case MISSION_ID_PALO_ALTO:
-			tasks = getResources().getStringArray(R.array.task_list_palo_alto);
-			break;
-		case MISSION_ID_SUNNYVALE:
-			tasks = getResources().getStringArray(R.array.task_list_sunnyavle);
-			break;
-		}
-		String task = tasks[mTaskId];
+		String task = "Brooklyn Bridge";
 		textview.setText(task);
 		
 //		BUTTON
 		Button cameraBtn = (Button)findViewById(R.id.button_task_camera);
 		Button locationBtn = (Button)findViewById(R.id.button_task_location);
 		Button syncBtn = (Button)findViewById(R.id.button_task_sync);
+		Button qandaBtn = (Button)findViewById(R.id.button_task_qanda);
 		
 		cameraBtn.setOnClickListener(TaskActivity.this);
 		locationBtn.setOnClickListener(TaskActivity.this);
 		syncBtn.setOnClickListener(TaskActivity.this);
-		
-//		TITLE
-		LinearLayout title = (LinearLayout)findViewById(R.id.layout_task_title);
-		title.setBackgroundResource(mImageId);
-		title.setAlpha(63);
+		qandaBtn.setOnClickListener(TaskActivity.this);
 	}
 	
 	private void showToast(){
@@ -107,6 +89,8 @@ public class TaskActivity extends Activity implements OnClickListener {
 		} else if (id == R.id.button_task_sync) {
 			showToast();
 			return;
+		} else if(id == R.id.button_task_qanda){
+			intent.setClass(TaskActivity.this, QAndAActivity.class);
 		} else {
 			return;
 		}

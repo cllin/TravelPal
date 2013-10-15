@@ -9,39 +9,11 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:orientation="vertical"
-		android:layout_weight="1">
-	    <TextView
-			android:id="@+id/textview_task"
-			android:textColor="#FFFFFF"
-			android:typeface="normal"
-			android:textSize="40sp"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="left"/>
-
-		<LinearLayout
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:orientation="vertical"
-			android:gravity="right">
-			<RatingBar
-				android:id="@+id/ratingBar_task"
-				android:layout_width="240dp"
-				android:layout_height="match_parent"
-				android:numStars="5"
-				android:rating="4"
-				android:stepSize="1"
-				android:layout_gravity="bottom"/>
-	    </LinearLayout>
-	    <TextView
-			android:id="@+id/textview_task_title"
-			android:layout_width="wrap_content"
-			android:layout_height="fill_parent"
-			android:textColor="#ffffff"
-			android:textSize="24sp"
-			android:gravity="bottom"
-			android:fontFamily="sans-serif-light"
-			android:text="@string/task_instruction_title" />
+		android:layout_weight="3">
+		<ImageView
+			android:id="@+id/imageview_task"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"/>
     </LinearLayout>
 
 	<LinearLayout
@@ -50,7 +22,30 @@
 		android:orientation="vertical"
 		android:gravity="center_vertical"
 		android:layout_marginLeft="5pt"
-		android:layout_weight="1" >
+		android:layout_weight="2" >
+	    <TextView
+			android:id="@+id/textview_task"
+			android:textColor="#000000"
+			android:typeface="normal"
+			android:textSize="40sp"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center_horizontal"/>
+	    <!-- TODO -->
+	    <TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#000000"
+			android:fontFamily="sans-serif-light"
+			android:text="------" />
+	    <TextView
+			android:id="@+id/textview_task_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="#000000"
+			android:textSize="18sp"
+			android:fontFamily="sans-serif-light"
+			android:text="@string/task_instruction_title" />
 		<TextView
 			android:id="@+id/textview_task_description_1"
 			android:layout_width="wrap_content"
@@ -80,9 +75,8 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:gravity="center"
-		android:background="?android:attr/dividerVertical"
 		android:orientation="horizontal"
-		android:layout_weight="1">
+		android:layout_weight="4">
 		<Button
 			android:id="@+id/button_task_camera"
 			android:layout_width="wrap_content"
@@ -101,6 +95,15 @@
 			android:layout_weight="1"
 			android:fontFamily="sans-serif-light"
 			android:text="@string/button_goto_location" />
+		<Button
+			android:id="@+id/button_task_qanda"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="?android:attr/selectableItemBackground"
+			android:drawableTop="@drawable/q_and_a"
+			android:layout_weight="1"
+			android:fontFamily="sans-serif-light"
+			android:text="@string/button_goto_qanda" />
 		<Button
 			android:id="@+id/button_task_sync"
 			android:layout_width="wrap_content"

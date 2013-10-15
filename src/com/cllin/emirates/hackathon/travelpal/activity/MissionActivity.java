@@ -13,7 +13,6 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
-import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
@@ -21,12 +20,14 @@ public class MissionActivity extends Activity implements OnItemClickListener{
 	private static final String KEY_MISSION_ID = "mission_id";
 	private static final String KEY_TASK_ID = "task_id";
 	private static final String KEY_IMAGE_ID = "image_id";
-	
-	private static final int MISSION_ID_SANFRANCISCO = 0;
-	private static final int MISSION_ID_PALO_ALTO = 1;
-	private static final int MISSION_ID_SUNNYVALE = 2;
 
-	private static final int[] images = {R.drawable.golden_gate, R.drawable.fishermans_wharf, R.drawable.fine_arts_museum}; 
+	private static final int[] images = {
+		R.drawable.brooklyn_bridge, R.drawable.metropolitan_museum_of_art, 
+		R.drawable.museum_of_modern_art, R.drawable.broadway,
+		R.drawable.flatiron_building, R.drawable.central_park,
+		R.drawable.trinity_church, R.drawable.wall_street,
+		R.drawable.united_nation, R.drawable.morgan_library
+	}; 
 	
 	private int mMissionId = -1;
 	
@@ -40,66 +41,33 @@ public class MissionActivity extends Activity implements OnItemClickListener{
 	private void setView(){
 		setContentView(R.layout.activity_mission);
 		GridView gridView = (GridView) findViewById(R.id.mission_gridView);
-		final String[] list = getResources().getStringArray(R.array.mission_list);
+//		TODO
+		final String[] list = getResources().getStringArray(R.array.task_list_newyork);
 		
 		List<Map<String, Object>> items = new ArrayList<Map<String,Object>>();
 		for (int i = 0; i < list.length; i++) {
 			Map<String, Object> item = new HashMap<String, Object>();
 			item.put("image", images[i]);
-			item.put("mission", list[i]);
+			item.put("task", list[i]);
 			items.add(item);
 		}
 		
 		SimpleAdapter adapter = new SimpleAdapter(this, items, R.layout.layout_grid, 
-				new String[]{"image", "mission"}, new int[]{R.id.grid_image, R.id.grid_text});
+				new String[]{"image", "task"}, new int[]{R.id.grid_image, R.id.grid_text});
 		
 		gridView.setNumColumns(1);
 		gridView.setAdapter(adapter);
 		gridView.setOnItemClickListener(new GridView.OnItemClickListener(){
 			@Override
 			public void onItemClick(AdapterView<?> adapterView,View view,int position,long id) {
-				if(position != 1){
-					Toast.makeText(getApplicationContext(), "Sorry, the mission is not ready yet!", Toast.LENGTH_SHORT).show();
+				if(position != 0){
+					Toast.makeText(getApplicationContext(), "Sorry, the task is not ready yet!", Toast.LENGTH_SHORT).show();
 					return;
 				}
 				
 				switchActivity(position);
 			}
 		});
-		
-//		ArrayList<HashMap<String,Object>> list = new ArrayList<HashMap<String,Object>>();
-//		SimpleAdapter adapter;
-//		String[] tasks = null;
-//		String[] descriptions = getResources().getStringArray(R.array.task_list_description);
-//		
-//		Bundle bundle = this.getIntent().getExtras();
-//		mMissionId = bundle.getInt(KEY_MISSION_ID);
-//		
-//		switch(mMissionId){
-//		case MISSION_ID_SANFRANCISCO:
-//			tasks = getResources().getStringArray(R.array.task_list_sanfrancisco);
-//			break;
-//		case MISSION_ID_PALO_ALTO:
-//			tasks = getResources().getStringArray(R.array.task_list_palo_alto);
-//			break;
-//		case MISSION_ID_SUNNYVALE:
-//			tasks = getResources().getStringArray(R.array.task_list_sunnyavle);
-//			break;
-//		}
-//		
-//		for(int i = 0; i < tasks.length; i++){
-//			HashMap<String,Object> item = new HashMap<String,Object>();
-//			item.put("image", images[i]);
-//			item.put("task", tasks[i]);
-//			item.put("description", descriptions[i]);
-//			list.add( item );
-//		}
-//		
-//		adapter = new SimpleAdapter(this, list, R.layout.layout_list, new String[] {"image", "task", "description" }, 
-//				new int[] {R.id.list_image, R.id.list_title, R.id.list_description});
-//		
-//		listView.setAdapter(adapter);
-//		listView.setOnItemClickListener(this);
 	}
 	
 	private void switchActivity(int idx){
