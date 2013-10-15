@@ -2,6 +2,8 @@ package com.cllin.emirates.hackathon.travelpal.activity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,8 +12,10 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 public class MissionActivity extends Activity implements OnItemClickListener{
 	private static final String KEY_MISSION_ID = "mission_id";
@@ -35,42 +39,67 @@ public class MissionActivity extends Activity implements OnItemClickListener{
 	
 	private void setView(){
 		setContentView(R.layout.activity_mission);
-		ListView listView = (ListView)findViewById(R.id.listview_tasks);
+		GridView gridView = (GridView) findViewById(R.id.mission_gridView);
+		final String[] list = getResources().getStringArray(R.array.mission_list);
 		
-		ArrayList<HashMap<String,Object>> list = new ArrayList<HashMap<String,Object>>();
-		
-		SimpleAdapter adapter;
-		String[] tasks = null;
-		String[] descriptions = getResources().getStringArray(R.array.task_list_description);
-		
-		Bundle bundle = this.getIntent().getExtras();
-		mMissionId = bundle.getInt(KEY_MISSION_ID);
-		
-		switch(mMissionId){
-		case MISSION_ID_SANFRANCISCO:
-			tasks = getResources().getStringArray(R.array.task_list_sanfrancisco);
-			break;
-		case MISSION_ID_PALO_ALTO:
-			tasks = getResources().getStringArray(R.array.task_list_palo_alto);
-			break;
-		case MISSION_ID_SUNNYVALE:
-			tasks = getResources().getStringArray(R.array.task_list_sunnyavle);
-			break;
-		}
-		
-		for(int i = 0; i < tasks.length; i++){
-			HashMap<String,Object> item = new HashMap<String,Object>();
+		List<Map<String, Object>> items = new ArrayList<Map<String,Object>>();
+		for (int i = 0; i < list.length; i++) {
+			Map<String, Object> item = new HashMap<String, Object>();
 			item.put("image", images[i]);
-			item.put("task", tasks[i]);
-			item.put("description", descriptions[i]);
-			list.add( item );
+			item.put("mission", list[i]);
+			items.add(item);
 		}
 		
-		adapter = new SimpleAdapter(this, list, R.layout.layout_list, new String[] {"image", "task", "description" }, 
-				new int[] {R.id.list_image, R.id.list_title, R.id.list_description});
+		SimpleAdapter adapter = new SimpleAdapter(this, items, R.layout.layout_grid, 
+				new String[]{"image", "mission"}, new int[]{R.id.grid_image, R.id.grid_text});
 		
-		listView.setAdapter(adapter);
-		listView.setOnItemClickListener(this);
+		gridView.setNumColumns(1);
+		gridView.setAdapter(adapter);
+		gridView.setOnItemClickListener(new GridView.OnItemClickListener(){
+			@Override
+			public void onItemClick(AdapterView<?> adapterView,View view,int position,long id) {
+				if(position != 1){
+					Toast.makeText(getApplicationContext(), "Sorry, the mission is not ready yet!", Toast.LENGTH_SHORT).show();
+					return;
+				}
+				
+				switchActivity(position);
+			}
+		});
+		
+//		ArrayList<HashMap<String,Object>> list = new ArrayList<HashMap<String,Object>>();
+//		SimpleAdapter adapter;
+//		String[] tasks = null;
+//		String[] descriptions = getResources().getStringArray(R.array.task_list_description);
+//		
+//		Bundle bundle = this.getIntent().getExtras();
+//		mMissionId = bundle.getInt(KEY_MISSION_ID);
+//		
+//		switch(mMissionId){
+//		case MISSION_ID_SANFRANCISCO:
+//			tasks = getResources().getStringArray(R.array.task_list_sanfrancisco);
+//			break;
+//		case MISSION_ID_PALO_ALTO:
+//			tasks = getResources().getStringArray(R.array.task_list_palo_alto);
+//			break;
+//		case MISSION_ID_SUNNYVALE:
+//			tasks = getResources().getStringArray(R.array.task_list_sunnyavle);
+//			break;
+//		}
+//		
+//		for(int i = 0; i < tasks.length; i++){
+//			HashMap<String,Object> item = new HashMap<String,Object>();
+//			item.put("image", images[i]);
+//			item.put("task", tasks[i]);
+//			item.put("description", descriptions[i]);
+//			list.add( item );
+//		}
+//		
+//		adapter = new SimpleAdapter(this, list, R.layout.layout_list, new String[] {"image", "task", "description" }, 
+//				new int[] {R.id.list_image, R.id.list_title, R.id.list_description});
+//		
+//		listView.setAdapter(adapter);
+//		listView.setOnItemClickListener(this);
 	}
 	
 	private void switchActivity(int idx){

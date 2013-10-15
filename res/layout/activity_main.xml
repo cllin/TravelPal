@@ -3,16 +3,23 @@
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:orientation="vertical"
-	android:background="#1EBBA6"
 	tools:context=".MainActivity">
-	
+
+	<!--TODO
+    <ImageView
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_weight="6"
+		android:background="@drawable/ic_launcher"/>
+	-->
+    	
 	<LinearLayout
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:orientation="horizontal"
 		android:gravity="center_vertical"
 		android:layout_weight="6"
-		android:background="@drawable/search_bar">"
+		android:background="@drawable/search_bar">
 		<EditText
 			android:layout_width="fill_parent"
 			android:layout_height="wrap_content"
@@ -27,19 +34,19 @@
 			android:layout_height="wrap_content"
 			android:layout_weight="8"
 			android:drawableBottom="@drawable/search_grey"
+			android:gravity="center"
 			android:background="?android:attr/selectableItemBackground"/>
 	</LinearLayout>
     
     <GridView
-		android:id="@+id/gridView"
+		android:id="@+id/main_gridView"
 		android:layout_gravity="bottom"
 		android:gravity="center"
 		android:layout_width="fill_parent"
 		android:layout_height="fill_parent"
 		android:layout_weight="1"
-		android:layout_marginTop="5pt"
-		android:horizontalSpacing="10dip"
-		android:verticalSpacing="10dip"
-		android:background="@drawable/grid_background">
+		android:horizontalSpacing="5dip"
+		android:verticalSpacing="3dip"
+		android:background="#ffffff">
 	</GridView>
 </LinearLayout>

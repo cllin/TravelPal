@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical"
-	android:layout_width="wrap_content"
+	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
 	android:background="#66ffffff"
 	android:gravity="center">
 	
 	<ImageView
 		android:id="@+id/grid_image"
-		android:layout_width="300px"
-		android:layout_height="225px"
-		android:layout_marginTop="3pt"
-		android:layout_marginLeft="3pt"
-		android:layout_marginRight="3pt"/>
+		android:layout_width="330dp"
+		android:layout_height="110dp"/>
 	<TextView 
 		android:id="@+id/grid_text"
 		android:layout_height="fill_parent"
 		android:layout_width="fill_parent"
 		android:textSize="10pt"
 		android:fontFamily="sans-serif-light"
-		android:gravity="center"/>
+		android:layout_marginTop="-15pt"
+		android:layout_marginLeft="15pt"
+		android:gravity="left"
+		android:textColor="#ffffff"
+		android:background="#66ffffff"/>
+
 </LinearLayout>

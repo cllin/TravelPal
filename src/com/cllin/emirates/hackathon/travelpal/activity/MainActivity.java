@@ -29,7 +29,7 @@ public class MainActivity extends Activity{
 	
 	private void setView(){
 		setContentView(R.layout.activity_main);
-		GridView gridView = (GridView) findViewById(R.id.gridView);
+		GridView gridView = (GridView) findViewById(R.id.main_gridView);
 		final String[] list = getResources().getStringArray(R.array.mission_list);
 		
 		List<Map<String, Object>> items = new ArrayList<Map<String,Object>>();
@@ -43,12 +43,12 @@ public class MainActivity extends Activity{
 		SimpleAdapter adapter = new SimpleAdapter(this, items, R.layout.layout_grid, 
 				new String[]{"image", "mission"}, new int[]{R.id.grid_image, R.id.grid_text});
 		
-		gridView.setNumColumns(2);
+		gridView.setNumColumns(1);
 		gridView.setAdapter(adapter);
 		gridView.setOnItemClickListener(new GridView.OnItemClickListener(){
 			@Override
 			public void onItemClick(AdapterView<?> adapterView,View view,int position,long id) {
-				if(position > 0){
+				if(position != 1){
 					Toast.makeText(getApplicationContext(), "Sorry, the mission is not ready yet!", Toast.LENGTH_SHORT).show();
 					return;
 				}
