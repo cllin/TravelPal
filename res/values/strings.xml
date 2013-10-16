@@ -43,8 +43,8 @@
 	<string name="button_goto_location">Location</string>
 	<string name="button_goto_qanda">Q and A</string>
 	<string name="button_sync">Sync</string>
-	<string name="button_submit">Submit!</string>
-	<string name="button_hint">Hint?</string>
+	<string name="button_submit">Submit</string>
+	<string name="button_hint">Hint</string>
 	<string name="mission_activity_title">Missions</string>
 	<string-array name="task_list_description">
 		<item>The most beloved place in the city!</item>

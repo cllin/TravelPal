@@ -39,12 +39,12 @@
 				android:layout_height="wrap_content"
 				android:layout_gravity="center_horizontal"/>
     	</LinearLayout>
-			<View
-	    		android:layout_width="fill_parent"
-	    		android:layout_height="1dp"
-	    		android:layout_marginLeft="3pt"
-	    		android:layout_marginRight="3pt"
-	    		android:background="@android:color/darker_gray"/>
+		<View
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="1dp"
+	    	android:layout_marginLeft="3pt"
+	    	android:layout_marginRight="3pt"
+	    	android:background="@android:color/darker_gray"/>
 		<ScrollView
 			android:layout_width="match_parent"
 			android:layout_height="match_parent"

@@ -5,12 +5,14 @@
     android:orientation="vertical" >
 
 	<LinearLayout
+	    android:id="@+id/layout_task_title"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:orientation="vertical"
-		android:layout_weight="3">
+		android:layout_weight="6">
 		<ImageView
 			android:id="@+id/imageview_qanda"
+			android:contentDescription="@string/image_description"
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"/>
     </LinearLayout>
@@ -19,88 +21,113 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:orientation="vertical"
-		android:gravity="center_horizontal"
-		android:layout_marginLeft="5pt"
-		android:layout_weight="2" >
-	    <TextView
-			android:id="@+id/textview_qanda"
-			android:textColor="#000000"
-			android:typeface="normal"
-			android:fontFamily="sans-serif-condense"
-			android:textStyle="bold"
-			android:textSize="40sp"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center_horizontal"/>
-		<View
-    		android:layout_width="fill_parent"
-    		android:layout_height="1dp"
-    		android:layout_marginLeft="-2pt"
-    		android:layout_marginRight="3pt"
-    		android:background="@android:color/darker_gray"/>
-	    <TextView
-			android:id="@+id/textview_qanda_question"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:textColor="#000000"
-			android:textSize="18sp"
-			android:fontFamily="sans-serif-light"
-			android:text="@string/qanda_question" />
-	    <!-- TODO Radiobutton-->
-	    <LinearLayout
+		android:gravity="center_vertical"
+		android:layout_weight="4" >
+		<LinearLayout
 			android:layout_width="match_parent"
-			android:layout_height="0dip"
-			android:layout_weight="4">
-			<RadioGroup
-				android:id="@+id/radiogroup_qanda_answer"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:gravity="center"
+			android:layout_weight="2">
+		    <TextView
+				android:id="@+id/textview_qanda"
+				android:textColor="#000000"
+				android:typeface="normal"
+				android:fontFamily="sans-serif-condense"
+				android:textStyle="bold"
+				android:textSize="40sp"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:orientation="vertical" >
-				<RadioButton
+				android:layout_gravity="center_horizontal"/>
+    	</LinearLayout>
+		<View
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="1dp"
+	    	android:layout_marginLeft="3pt"
+	    	android:layout_marginRight="3pt"
+	    	android:background="@android:color/darker_gray"/>
+		<ScrollView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1">
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:orientation="vertical">
+				<TextView
+					android:id="@+id/textview_qanda_question"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="@string/qanda_answer_1" />
-				<RadioButton
+					android:layout_marginLeft="12pt"
+					android:textColor="#000000"
+					android:textSize="18sp"
+					android:fontFamily="sans-serif-light"
+					android:text="@string/qanda_question" />
+				<RadioGroup
+					android:id="@+id/radiogroup_qanda_answer"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="@string/qanda_answer_2" />
-				<RadioButton
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="@string/qanda_answer_3" />
-				<RadioButton
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:text="@string/qanda_answer_4" />
-			</RadioGroup>
-		</LinearLayout>
+					android:orientation="vertical" >
+					<RadioButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:fontFamily="sans-serif-light"
+						android:textSize="20sp"
+						android:text="@string/qanda_answer_1" />
+					<RadioButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:fontFamily="sans-serif-light"
+						android:textSize="20sp"
+						android:text="@string/qanda_answer_2" />
+					<RadioButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:fontFamily="sans-serif-light"
+						android:textSize="20sp"
+						android:text="@string/qanda_answer_3" />
+					<RadioButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:fontFamily="sans-serif-light"
+						android:textSize="20sp"
+						android:text="@string/qanda_answer_4" />
+				</RadioGroup>
+			</LinearLayout>
+		</ScrollView>
 	</LinearLayout>
-	
+	<View
+		android:layout_width="fill_parent"
+	    android:layout_height="1dp"
+	    android:layout_marginLeft="3pt"
+	    android:layout_marginRight="3pt"
+	    android:background="@android:color/darker_gray"/>
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:gravity="center"
 		android:orientation="horizontal"
-		android:layout_weight="4">
+		android:layout_weight="7">
 		<Button
 			android:id="@+id/button_qanda_submit"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:layout_gravity="center"
+			style="?android:attr/borderlessButtonStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="?android:attr/selectableItemBackground"
+			android:drawableTop="@drawable/check"
 			android:layout_weight="1"
-			android:background="#32cd32"
-			android:textColor="#ffffff"
-			android:fontFamily="sans-serif-condensed"
+			android:fontFamily="sans-serif-light"
 			android:text="@string/button_submit" />	
 		<Button
 			android:id="@+id/button_qanda_hint"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent"
-			android:layout_gravity="center"
+			style="?android:attr/borderlessButtonStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="?android:attr/selectableItemBackground"
+			android:drawableTop="@drawable/hint"
 			android:layout_weight="1"
-			android:background="#ff0000"
-			android:textColor="#ffffff"
-			android:fontFamily="sans-serif-condensed"
+			android:fontFamily="sans-serif-light"
 			android:text="@string/button_hint" />
-		</LinearLayout>
+	</LinearLayout> 
 </LinearLayout>
