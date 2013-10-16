@@ -9,17 +9,15 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.cllin.emirates.hackathon.travelpal.task.Task;
 
 public class QAndAActivity extends Activity implements OnClickListener{
-	private static final String KEY_MISSION_ID = "mission_id";
-	private static final String KEY_TASK_ID = "task_id";
-	private static final String KEY_IMAGE_ID = "image_id";
-	
-	private int mTaskId = -1;
-	private int mMissionId = -1;
-	private int mImageId = -1;
+	private static final String KEY_TASK = "task";
+	private Task mTask;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,32 +26,50 @@ public class QAndAActivity extends Activity implements OnClickListener{
 		
 		setContentView(R.layout.activity_qanda);
 		
-		getBundle();
+		Intent intent = getIntent();
+		mTask = (Task)intent.getSerializableExtra(KEY_TASK);
+		
 		setView();
-	}
-	
-	private void getBundle(){
-		Bundle bundle = this.getIntent().getExtras();
-		mMissionId = bundle.getInt(KEY_MISSION_ID);
-		mTaskId = bundle.getInt(KEY_TASK_ID);
-		mImageId = bundle.getInt(KEY_IMAGE_ID);
 	}
 
 //	TODO
 	private void setView(){
 		ImageView imageView = (ImageView)findViewById(R.id.imageview_qanda);
-		imageView.setBackgroundResource(R.drawable.brooklyn_bridge);
+		imageView.setBackgroundResource(mTask.getMyImage());
 		
 		TextView textview = (TextView)findViewById(R.id.textview_qanda);
-		String task = "Brooklyn Bridge";
-		textview.setText(task);
+		TextView question = (TextView)findViewById(R.id.textview_qanda_question);
+		textview.setText(mTask.getMyName());
+		question.setText(mTask.getQuestion());
 		
-//		BUTTON
-	}
-	
+		RadioButton option_1 = (RadioButton)findViewById(R.id.radiogroup_qanda_option_1);
+		RadioButton option_2 = (RadioButton)findViewById(R.id.radiogroup_qanda_option_2);
+		RadioButton option_3 = (RadioButton)findViewById(R.id.radiogroup_qanda_option_3);
+		RadioButton option_4 = (RadioButton)findViewById(R.id.radiogroup_qanda_option_4);
+		option_1.setText(mTask.getOptions()[0]);
+		option_2.setText(mTask.getOptions()[1]);
+		option_3.setText(mTask.getOptions()[2]);
+		option_4.setText(mTask.getOptions()[3]);
 
+//		TODO
+//		BUTTON
+		Button submit = (Button)findViewById(R.id.button_qanda_submit);
+		Button hint = (Button)findViewById(R.id.button_qanda_hint);
+		submit.setOnClickListener(QAndAActivity.this);
+		hint.setOnClickListener(QAndAActivity.this);
+	}
+
+//	TODO
 	@Override
 	public void onClick(View v) {
-//		TODO
+		switch(v.getId()){
+		case R.id.button_qanda_submit:
+			Toast.makeText(getApplicationContext(), "Correct! Let's finish another task!", Toast.LENGTH_LONG).show();
+			finish();
+			break;
+		case R.id.button_qanda_hint:
+			Toast.makeText(getApplicationContext(), "This is you hint", Toast.LENGTH_SHORT).show();
+			break;
+		}
 	}
 }

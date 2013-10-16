@@ -60,39 +60,39 @@
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginLeft="12pt"
+					android:layout_marginRight="12pt"
 					android:textColor="#000000"
 					android:textSize="18sp"
-					android:fontFamily="sans-serif-light"
-					android:text="@string/qanda_question" />
+					android:fontFamily="sans-serif-light"/>
 				<RadioGroup
-					android:id="@+id/radiogroup_qanda_answer"
+					android:id="@+id/radiogroup_qanda_options"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:orientation="vertical" >
 					<RadioButton
+					    android:id="@+id/radiogroup_qanda_option_1"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:fontFamily="sans-serif-light"
-						android:textSize="20sp"
-						android:text="@string/qanda_answer_1" />
+						android:textSize="20sp"/>
 					<RadioButton
+					    android:id="@+id/radiogroup_qanda_option_2"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:fontFamily="sans-serif-light"
-						android:textSize="20sp"
-						android:text="@string/qanda_answer_2" />
+						android:textSize="20sp"/>
 					<RadioButton
+					    android:id="@+id/radiogroup_qanda_option_3"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:fontFamily="sans-serif-light"
-						android:textSize="20sp"
-						android:text="@string/qanda_answer_3" />
+						android:textSize="20sp"/>
 					<RadioButton
+					    android:id="@+id/radiogroup_qanda_option_4"
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:fontFamily="sans-serif-light"
-						android:textSize="20sp"
-						android:text="@string/qanda_answer_4" />
+						android:textSize="20sp"/>
 				</RadioGroup>
 			</LinearLayout>
 		</ScrollView>

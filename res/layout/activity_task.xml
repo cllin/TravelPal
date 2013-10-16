@@ -12,6 +12,7 @@
 		android:layout_weight="6">
 		<ImageView
 			android:id="@+id/imageview_task"
+			android:contentDescription="@string/image_description"
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"/>
     </LinearLayout>
@@ -51,7 +52,7 @@
 			android:layout_weight="1">
 			<LinearLayout
 				android:layout_width="match_parent"
-				android:layout_height="match_parent"
+				android:layout_height="wrap_content"
 				android:orientation="vertical">
     			<TextView
 					android:id="@+id/textview_task_title"
@@ -69,8 +70,7 @@
 					android:layout_marginLeft="15dp"
 					android:textColor="#2D373f"
 					android:textSize="24sp"
-					android:fontFamily="sans-serif-light"
-					android:text="@string/task_instruction_1" />
+					android:fontFamily="sans-serif-light"/>
 				<TextView
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -86,8 +86,7 @@
 					android:layout_marginLeft="15dp"
 					android:textColor="#2D373f"
 					android:textSize="24sp"
-					android:fontFamily="sans-serif-light"
-					android:text="@string/task_instruction_2" />
+					android:fontFamily="sans-serif-light"/>
 				<TextView
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -103,8 +102,7 @@
 					android:layout_marginLeft="15dp"
 					android:textColor="#2D373f"
 					android:textSize="24sp"
-					android:fontFamily="sans-serif-light"
-					android:text="@string/task_instruction_3" />
+					android:fontFamily="sans-serif-light"/>
 			</LinearLayout>
 		</ScrollView>
 	</LinearLayout>

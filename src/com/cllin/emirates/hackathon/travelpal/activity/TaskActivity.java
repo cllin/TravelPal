@@ -9,18 +9,14 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cllin.emirates.hackathon.travelpal.task.Task;
+
 public class TaskActivity extends Activity implements OnClickListener {
-	private static final String KEY_MISSION_ID = "mission_id";
-	private static final String KEY_TASK_ID = "task_id";
-	private static final String KEY_IMAGE_ID = "image_id";
-	
-	private int mTaskId = -1;
-	private int mMissionId = -1;
-	private int mImageId = -1;
+	private static final String KEY_TASK = "task";
+	private Task mTask;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,25 +25,25 @@ public class TaskActivity extends Activity implements OnClickListener {
 		
 		setContentView(R.layout.activity_task);
 		
-		getBundle();
+		Intent intent = getIntent();
+		mTask = (Task)intent.getSerializableExtra(KEY_TASK);
+		
 		setView();
-	}
-	
-	private void getBundle(){
-		Bundle bundle = this.getIntent().getExtras();
-		mMissionId = bundle.getInt(KEY_MISSION_ID);
-		mTaskId = bundle.getInt(KEY_TASK_ID);
-		mImageId = bundle.getInt(KEY_IMAGE_ID);
 	}
 
 //	TODO
 	private void setView(){
 		ImageView imageView = (ImageView)findViewById(R.id.imageview_task);
-		imageView.setBackgroundResource(R.drawable.brooklyn_bridge);
+		imageView.setBackgroundResource(mTask.getMyImage());
 		
 		TextView textview = (TextView)findViewById(R.id.textview_task);
-		String task = "Brooklyn Bridge";
-		textview.setText(task);
+		TextView description1 = (TextView)findViewById(R.id.textview_task_description_1);
+		TextView description2 = (TextView)findViewById(R.id.textview_task_description_2);
+		TextView description3 = (TextView)findViewById(R.id.textview_task_description_3);
+		textview.setText(mTask.getMyName());
+		description1.setText(mTask.getDescriptions()[0]);
+		description2.setText(mTask.getDescriptions()[1]);
+		description3.setText(mTask.getDescriptions()[2]);
 		
 //		BUTTON
 		Button cameraBtn = (Button)findViewById(R.id.button_task_camera);
@@ -84,10 +80,11 @@ public class TaskActivity extends Activity implements OnClickListener {
 		
 		int id = v.getId();
 		if (id == R.id.button_task_camera) {
-			Toast.makeText(getApplicationContext(), "Sorry, the task is not ready yet!", Toast.LENGTH_SHORT).show();
-//			intent.setClass(TaskActivity.this, CameraActivity.class);
+			intent.setClass(TaskActivity.this, CameraActivity.class);
 		} else if (id == R.id.button_task_location) {
+//			TODO
 			Toast.makeText(getApplicationContext(), "Sorry, the task is not ready yet!", Toast.LENGTH_SHORT).show();
+			return;
 //			intent.setClass(TaskActivity.this, LocationActivity.class);
 		} else if (id == R.id.button_task_sync) {
 			showToast();
@@ -98,13 +95,8 @@ public class TaskActivity extends Activity implements OnClickListener {
 			return;
 		}
 		
-		Bundle bundle = new Bundle();
-		bundle.putInt(KEY_MISSION_ID, mMissionId);
-        bundle.putInt(KEY_TASK_ID, mTaskId);
-        intent.putExtras(bundle);
-		
+		intent.putExtra(KEY_TASK, mTask);
 		startActivity(intent);
-		
 	}
 
 }
