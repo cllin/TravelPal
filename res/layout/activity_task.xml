@@ -27,17 +27,18 @@
 			android:id="@+id/textview_task"
 			android:textColor="#000000"
 			android:typeface="normal"
+			android:fontFamily="sans-serif-condense"
+			android:textStyle="bold"
 			android:textSize="40sp"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:layout_gravity="center_horizontal"/>
-	    <!-- TODO -->
-	    <TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:textColor="#000000"
-			android:fontFamily="sans-serif-light"
-			android:text="------" />
+		<View
+    		android:layout_width="fill_parent"
+    		android:layout_height="1dp"
+    		android:layout_marginLeft="-2pt"
+    		android:layout_marginRight="3pt"
+    		android:background="@android:color/darker_gray"/>
 	    <TextView
 			android:id="@+id/textview_task_title"
 			android:layout_width="wrap_content"

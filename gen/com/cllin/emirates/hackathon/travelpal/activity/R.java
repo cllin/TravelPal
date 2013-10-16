@@ -64,31 +64,34 @@ public final class R {
         public static final int wall_street=0x7f020020;
     }
     public static final class id {
-        public static final int action_settings=0x7f090018;
+        public static final int action_settings=0x7f09001b;
         public static final int button_camera_take=0x7f090002;
         public static final int button_location_check=0x7f090003;
-        public static final int button_task_camera=0x7f09000f;
-        public static final int button_task_location=0x7f090010;
-        public static final int button_task_qanda=0x7f090011;
-        public static final int button_task_sync=0x7f090012;
+        public static final int button_qanda_hint=0x7f09000b;
+        public static final int button_qanda_submit=0x7f09000a;
+        public static final int button_task_camera=0x7f090012;
+        public static final int button_task_location=0x7f090013;
+        public static final int button_task_qanda=0x7f090014;
+        public static final int button_task_sync=0x7f090015;
         public static final int cameraSurfaceView=0x7f090001;
         public static final int frameLayout1=0x7f090000;
-        public static final int grid_image=0x7f090013;
-        public static final int grid_text=0x7f090014;
+        public static final int grid_image=0x7f090016;
+        public static final int grid_text=0x7f090017;
         public static final int imageview_qanda=0x7f090006;
-        public static final int imageview_task=0x7f09000a;
-        public static final int layout_task_title=0x7f090009;
-        public static final int list_description=0x7f090017;
-        public static final int list_image=0x7f090015;
-        public static final int list_title=0x7f090016;
+        public static final int imageview_task=0x7f09000d;
+        public static final int layout_task_title=0x7f09000c;
+        public static final int list_description=0x7f09001a;
+        public static final int list_image=0x7f090018;
+        public static final int list_title=0x7f090019;
         public static final int main_gridView=0x7f090004;
         public static final int mission_gridView=0x7f090005;
+        public static final int radiogroup_qanda_answer=0x7f090009;
         public static final int textview_qanda=0x7f090007;
-        public static final int textview_qanda_title=0x7f090008;
-        public static final int textview_task=0x7f09000b;
-        public static final int textview_task_description_1=0x7f09000d;
-        public static final int textview_task_description_2=0x7f09000e;
-        public static final int textview_task_title=0x7f09000c;
+        public static final int textview_qanda_question=0x7f090008;
+        public static final int textview_task=0x7f09000e;
+        public static final int textview_task_description_1=0x7f090010;
+        public static final int textview_task_description_2=0x7f090011;
+        public static final int textview_task_title=0x7f09000f;
     }
     public static final class layout {
         public static final int activity_camera=0x7f030000;
@@ -109,17 +112,23 @@ public final class R {
         public static final int button_goto_camera=0x7f050005;
         public static final int button_goto_location=0x7f050006;
         public static final int button_goto_qanda=0x7f050007;
+        public static final int button_hint=0x7f05000a;
+        public static final int button_submit=0x7f050009;
         public static final int button_sync=0x7f050008;
         public static final int camera_default=0x7f050003;
         public static final int location_default=0x7f050004;
         public static final int mission_activity_instruction=0x7f050002;
-        public static final int mission_activity_title=0x7f050009;
-        public static final int qanda_instruction_title=0x7f05000f;
-        public static final int searchbar_hint=0x7f05000a;
-        public static final int task_instruction_1=0x7f05000c;
-        public static final int task_instruction_2=0x7f05000d;
-        public static final int task_instruction_and=0x7f05000e;
-        public static final int task_instruction_title=0x7f05000b;
+        public static final int mission_activity_title=0x7f05000b;
+        public static final int qanda_answer_1=0x7f050012;
+        public static final int qanda_answer_2=0x7f050013;
+        public static final int qanda_answer_3=0x7f050014;
+        public static final int qanda_answer_4=0x7f050015;
+        public static final int qanda_question=0x7f050011;
+        public static final int searchbar_hint=0x7f05000c;
+        public static final int task_instruction_1=0x7f05000e;
+        public static final int task_instruction_2=0x7f05000f;
+        public static final int task_instruction_and=0x7f050010;
+        public static final int task_instruction_title=0x7f05000d;
     }
     public static final class style {
         /** 

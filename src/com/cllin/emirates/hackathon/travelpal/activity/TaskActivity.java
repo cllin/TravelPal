@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class TaskActivity extends Activity implements OnClickListener {
 	private static final String KEY_MISSION_ID = "mission_id";
@@ -83,9 +84,11 @@ public class TaskActivity extends Activity implements OnClickListener {
 		
 		int id = v.getId();
 		if (id == R.id.button_task_camera) {
-			intent.setClass(TaskActivity.this, CameraActivity.class);
+			Toast.makeText(getApplicationContext(), "Sorry, the task is not ready yet!", Toast.LENGTH_SHORT).show();
+//			intent.setClass(TaskActivity.this, CameraActivity.class);
 		} else if (id == R.id.button_task_location) {
-			intent.setClass(TaskActivity.this, LocationActivity.class);
+			Toast.makeText(getApplicationContext(), "Sorry, the task is not ready yet!", Toast.LENGTH_SHORT).show();
+//			intent.setClass(TaskActivity.this, LocationActivity.class);
 		} else if (id == R.id.button_task_sync) {
 			showToast();
 			return;
