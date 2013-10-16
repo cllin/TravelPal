@@ -9,7 +9,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:orientation="vertical"
-		android:layout_weight="3">
+		android:layout_weight="6">
 		<ImageView
 			android:id="@+id/imageview_task"
 			android:layout_width="fill_parent"
@@ -21,63 +21,105 @@
 		android:layout_height="match_parent"
 		android:orientation="vertical"
 		android:gravity="center_vertical"
-		android:layout_marginLeft="5pt"
-		android:layout_weight="2" >
-	    <TextView
-			android:id="@+id/textview_task"
-			android:textColor="#000000"
-			android:typeface="normal"
-			android:fontFamily="sans-serif-condense"
-			android:textStyle="bold"
-			android:textSize="40sp"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_gravity="center_horizontal"/>
-		<View
-    		android:layout_width="fill_parent"
-    		android:layout_height="1dp"
-    		android:layout_marginLeft="-2pt"
-    		android:layout_marginRight="3pt"
-    		android:background="@android:color/darker_gray"/>
-	    <TextView
-			android:id="@+id/textview_task_title"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:textColor="#000000"
-			android:textSize="18sp"
-			android:fontFamily="sans-serif-light"
-			android:text="@string/task_instruction_title" />
-		<TextView
-			android:id="@+id/textview_task_description_1"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:textColor="#2D373f"
-			android:textSize="24sp"
-			android:fontFamily="sans-serif-light"
-			android:text="@string/task_instruction_1" />
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:textColor="#EE7836"
-			android:textSize="24sp"
-			android:fontFamily="sans-serif-thin"
-			android:text="@string/task_instruction_and" />
-		<TextView
-			android:id="@+id/textview_task_description_2"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:textColor="#2D373f"
-			android:textSize="24sp"
-			android:fontFamily="sans-serif-light"
-			android:text="@string/task_instruction_2" />
+		android:layout_weight="4" >
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:gravity="center"
+			android:layout_weight="2">
+		    <TextView
+				android:id="@+id/textview_task"
+				android:textColor="#000000"
+				android:typeface="normal"
+				android:fontFamily="sans-serif-condense"
+				android:textStyle="bold"
+				android:textSize="40sp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center_horizontal"/>
+    	</LinearLayout>
+			<View
+	    		android:layout_width="fill_parent"
+	    		android:layout_height="1dp"
+	    		android:layout_marginLeft="3pt"
+	    		android:layout_marginRight="3pt"
+	    		android:background="@android:color/darker_gray"/>
+		<ScrollView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_weight="1">
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:orientation="vertical">
+    			<TextView
+					android:id="@+id/textview_task_title"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="5dp"
+					android:textColor="#000000"
+					android:textSize="18sp"
+					android:fontFamily="sans-serif-light"
+					android:text="@string/task_instruction_title" />
+				<TextView
+					android:id="@+id/textview_task_description_1"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="15dp"
+					android:textColor="#2D373f"
+					android:textSize="24sp"
+					android:fontFamily="sans-serif-light"
+					android:text="@string/task_instruction_1" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="15dp"
+					android:textColor="#EE7836"
+					android:textSize="24sp"
+					android:fontFamily="sans-serif-thin"
+					android:text="@string/task_instruction_and" />
+				<TextView
+					android:id="@+id/textview_task_description_2"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="15dp"
+					android:textColor="#2D373f"
+					android:textSize="24sp"
+					android:fontFamily="sans-serif-light"
+					android:text="@string/task_instruction_2" />
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="15dp"
+					android:textColor="#EE7836"
+					android:textSize="24sp"
+					android:fontFamily="sans-serif-thin"
+					android:text="@string/task_instruction_and" />
+				<TextView
+					android:id="@+id/textview_task_description_3"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="15dp"
+					android:textColor="#2D373f"
+					android:textSize="24sp"
+					android:fontFamily="sans-serif-light"
+					android:text="@string/task_instruction_3" />
+			</LinearLayout>
+		</ScrollView>
 	</LinearLayout>
-	
+	<View
+		android:layout_width="fill_parent"
+	    android:layout_height="1dp"
+	    android:layout_marginLeft="3pt"
+	    android:layout_marginRight="3pt"
+	    android:background="@android:color/darker_gray"/>
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:gravity="center"
 		android:orientation="horizontal"
-		android:layout_weight="4">
+		android:layout_weight="7">
 		<Button
 			android:id="@+id/button_task_camera"
 			android:layout_width="wrap_content"

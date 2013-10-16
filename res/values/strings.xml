@@ -55,12 +55,14 @@
 	<string name="task_instruction_title">To finish this task, you should</string>
 	<string name="task_instruction_1">Take a picture with the famous bridge</string>	
 	<string name="task_instruction_2">Locate yourself in center of the bridge</string>
+	<string name="task_instruction_3">Answer the question</string>
 	<string name="task_instruction_and">AND</string>
 	<string name="qanda_question">How many years has the Brooklyn bridge been built?</string>
 	<string name="qanda_answer_1">180</string>
 	<string name="qanda_answer_2">130</string>
 	<string name="qanda_answer_3">90</string>
 	<string name="qanda_answer_4">50</string>
+	<string name="image_description">image description</string>
 	
 	
 </resources>
