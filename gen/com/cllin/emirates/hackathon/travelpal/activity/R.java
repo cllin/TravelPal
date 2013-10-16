@@ -80,7 +80,7 @@ public final class R {
         public static final int button_task_qanda=0x7f090019;
         public static final int button_task_sync=0x7f09001a;
         public static final int cameraSurfaceView=0x7f090001;
-        public static final int frameLayout1=0x7f090000;
+        public static final int frameLayout_camera=0x7f090000;
         public static final int grid_image=0x7f09001b;
         public static final int grid_text=0x7f09001c;
         public static final int imageview_qanda=0x7f090007;
