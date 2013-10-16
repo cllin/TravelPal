@@ -8,7 +8,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.hardware.Camera;
 import android.hardware.Camera.PictureCallback;
 import android.os.Bundle;
@@ -63,16 +62,6 @@ public class CameraActivity extends Activity implements Callback, OnClickListene
 	}
 	
 	private void goBack(){
-//		Intent intent = new Intent();
-//		intent.setClass(CameraActivity.this, TaskActivity.class);
-//		
-//		Bundle bundle = new Bundle();
-//		bundle.putInt(KEY_MISSION_ID, mMissionId);
-//        bundle.putInt(KEY_TASK_ID, mTaskId);
-//        intent.putExtras(bundle);
-//		
-//		startActivity(intent);
-		
 		finish();
 	}
 

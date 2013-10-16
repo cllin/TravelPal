@@ -1,45 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+	<!-- Tag -->
+	<string name="image_description">image description</string>
 	<string name="app_name">TravelPal</string>
 	<string name="action_settings">Settings</string>
-	<string-array name="mission_list">
-		<item>San Francisco</item>
-		<item>New York</item>
-		<item>Honolulu</item>
-		<item>Seattle</item>
-		<item>Las Vegas</item>
-	</string-array>
-	<string-array name="task_list_sanfrancisco">
-		<item>Golden Gate Bridge</item>
-		<item>Fishermans Wharf</item>
-		<item>Fine Arts Museums</item>
-	</string-array>	
-	<string-array name="task_list_palo_alto">
-		<item>Stanford University</item>
-		<item>Downtown Palo Alto</item>
-		<item>HP Garage</item>
-	</string-array>	
-	<string-array name="task_list_sunnyavle">
-		<item>Downtown Sunnyvale</item>
-		<item>Yahoo!</item>
-		<item>Lockheed Martin</item>
-	</string-array>
-	<string name="mission_activity_instruction">Choose one and enjoy!</string>
-	<string name="camera_default">This is CameraActivity</string>
-	<string name="location_default">This is LocationActivity</string>
+	
+	<!-- Button -->
 	<string name="button_goto_camera">Camera</string>
 	<string name="button_goto_location">Location</string>
+	<string name="button_goto_qanda">Q and A</string>
 	<string name="button_sync">Sync</string>
-	<string name="mission_activity_title">Missions</string>
-	<string-array name="task_list_description">
-		<item>The most beloved place in the city!</item>
-		<item>No one should miss this place!</item>
-		<item>You will definitely love here!</item>
-	</string-array>
+	<string name="button_submit">Submit</string>
+	<string name="button_hint">Hint</string>
+
+	<!-- TextView -->
 	<string name="searchbar_hint">Looking for a mission?</string>
+	<string name="camera_default">This is CameraActivity</string>
+	<string name="location_default">This is LocationActivity</string>	
+	<string name="mission_activity_title">Missions</string>
 	<string name="task_instruction_title">To finish this task, you should</string>
-	<string name="task_instruction_1">Take a picture with the famous chowder from Boudin</string>	
-	<string name="task_instruction_2">Locate yourself in center of the bridge</string>
 	<string name="task_instruction_and">AND</string>
 	
+	<!-- Q & A Questions -->
+	<string name="qanda_question_metromuseumofart">TODO</string>
+	<string name="qanda_question_museumofmodernart">Which of these facts about this stunning painting, "The Starry Night", are TRUE?</string>
+	<string name="qanda_question_broadway">TODO</string>
+	<string name="qanda_question_flatiron">The original name of the Flatiron Building was?</string>
+	<string name="qanda_question_centralpark">One of the many jewels of Central Park is the Bethesda Fountain, and the centerpiece of the fountain is a sculpture by Emma Stebbins. What is the name of this beautiful sculpture?</string>
+	<string name="qanda_question_trinitychurch">TODO</string>
+	<string name="qanda_question_wallstreet">TODO</string>
+	<string name="qanda_question_unitednation">The International Court of Justice is one of the six principal organs of the United Nations. Where is the International Court of Justice located?</string>
+	<string name="qanda_question_morganlibrary">TODO</string>
+	
+	<!-- Q & A Answers -->
+	<string-array name="qanda_answer_metromuseumofart">
+		<item>TODO</item>
+		<item>TODO</item>
+		<item>TODO</item>
+		<item>TODO</item>
+	</string-array>	
+	<string-array name="qanda_answer_museumofmodernart">
+		<item>It was painted by Vincent Van Gogh</item>
+		<item>The painting depicts a star-filled night sky, cypress trees, and a distant village</item>
+		<item>It was painted in 1889</item>
+		<item>All of above</item>
+	</string-array>	
+	<string-array name="qanda_answer_broadway">
+		<item>TODO</item>
+		<item>TODO</item>
+		<item>TODO</item>
+		<item>TODO</item>
+	</string-array>		
+	<string-array name="qanda_answer_flatiron">
+		<item>Fifth Avenue Building</item>
+		<item>Fuller Building</item>
+		<item>Vertical Pyramid of New York</item>
+		<item>Hexagon Building</item>
+	</string-array>
+	<string-array name="qanda_answer_centralpark">
+		<item>Spirit of the Age</item>
+		<item>Home of Nature</item>
+		<item>Excelsior</item>
+		<item>Angel of the Waters</item>
+	</string-array>
+	<string-array name="qanda_answer_trinitychurch">
+		<item>TODO</item>
+		<item>TODO</item>
+		<item>TODO</item>
+		<item>TODO</item>
+	</string-array>	
+	<string-array name="qanda_answer_wallstreet">
+		<item>TODO</item>
+		<item>TODO</item>
+		<item>TODO</item>
+		<item>TODO</item>
+	</string-array>
+	<string-array name="qanda_answer_unitednation">
+		<item>London, United Kingdom</item>
+		<item>Vienna, Austria</item>
+		<item>Geneva, Switzerland</item>
+		<item>The Hague, Netherlands</item>
+	</string-array>	
+	<string-array name="qanda_answer_morganlibrary">
+		<item>TODO</item>
+		<item>TODO</item>
+		<item>TODO</item>
+		<item>TODO</item>
+	</string-array>	
 </resources>

@@ -2,6 +2,10 @@ package com.cllin.emirates.hackathon.travelpal.activity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.cllin.emirates.hackathon.travelpal.mission.Mission;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -10,83 +14,64 @@ import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
+import android.widget.GridView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 public class MissionActivity extends Activity implements OnItemClickListener{
-	private static final String KEY_MISSION_ID = "mission_id";
-	private static final String KEY_TASK_ID = "task_id";
-	private static final String KEY_IMAGE_ID = "image_id";
-	
-	private static final int MISSION_ID_SANFRANCISCO = 0;
-	private static final int MISSION_ID_PALO_ALTO = 1;
-	private static final int MISSION_ID_SUNNYVALE = 2;
-
-	private static final int[] images = {R.drawable.golden_gate, R.drawable.fishermans_wharf, R.drawable.fine_arts_museum}; 
-	
-	private int mMissionId = -1;
+	private static final String KEY_MISSION = "mission";
+	private static final String KEY_TASK = "task";
+	private Mission mMission = new Mission();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		
+		Intent intent = getIntent();
+		mMission = (Mission) intent.getSerializableExtra(KEY_MISSION);
+		
 		setView();
 	}
 	
 	private void setView(){
 		setContentView(R.layout.activity_mission);
-		ListView listView = (ListView)findViewById(R.id.listview_tasks);
+		GridView gridView = (GridView) findViewById(R.id.mission_gridView);
 		
-		ArrayList<HashMap<String,Object>> list = new ArrayList<HashMap<String,Object>>();
-		
-		SimpleAdapter adapter;
-		String[] tasks = null;
-		String[] descriptions = getResources().getStringArray(R.array.task_list_description);
-		
-		Bundle bundle = this.getIntent().getExtras();
-		mMissionId = bundle.getInt(KEY_MISSION_ID);
-		
-		switch(mMissionId){
-		case MISSION_ID_SANFRANCISCO:
-			tasks = getResources().getStringArray(R.array.task_list_sanfrancisco);
-			break;
-		case MISSION_ID_PALO_ALTO:
-			tasks = getResources().getStringArray(R.array.task_list_palo_alto);
-			break;
-		case MISSION_ID_SUNNYVALE:
-			tasks = getResources().getStringArray(R.array.task_list_sunnyavle);
-			break;
-		}
-		
-		for(int i = 0; i < tasks.length; i++){
-			HashMap<String,Object> item = new HashMap<String,Object>();
+		String[] tasks = mMission.getTaskNames();
+		int[] images = mMission.getTaskImages();
+		List<Map<String, Object>> items = new ArrayList<Map<String,Object>>();
+		for (int i = 0; i < mMission.getTaskNum(); i++) {
+			Map<String, Object> item = new HashMap<String, Object>();
 			item.put("image", images[i]);
 			item.put("task", tasks[i]);
-			item.put("description", descriptions[i]);
-			list.add( item );
+			items.add(item);
 		}
 		
-		adapter = new SimpleAdapter(this, list, R.layout.layout_list, new String[] {"image", "task", "description" }, 
-				new int[] {R.id.list_image, R.id.list_title, R.id.list_description});
+		SimpleAdapter adapter = new SimpleAdapter(this, items, R.layout.layout_grid, 
+				new String[]{"image", "task"}, new int[]{R.id.grid_image, R.id.grid_text});
 		
-		listView.setAdapter(adapter);
-		listView.setOnItemClickListener(this);
+		gridView.setNumColumns(1);
+		gridView.setAdapter(adapter);
+		gridView.setOnItemClickListener(MissionActivity.this);
 	}
 	
 	private void switchActivity(int idx){
 		Intent intent = new Intent();
 		intent.setClass(MissionActivity.this, TaskActivity.class);
-		Bundle bundle = new Bundle();
-		bundle.putInt(KEY_MISSION_ID, mMissionId);
-        bundle.putInt(KEY_TASK_ID, idx);
-        bundle.putInt(KEY_IMAGE_ID, images[idx]);
-        intent.putExtras(bundle);
-        
-        startActivity(intent);
+		intent.putExtra(KEY_TASK, mMission.getTask(idx));
+		
+		startActivity(intent);
 	}
 
 	@Override
-	public void onItemClick(AdapterView<?> adapter, View view, int position, long id) {
+	public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+//		TODO
+//		Only Brooklyn Bridge is available now
+		if(position != 0){
+			Toast.makeText(getApplicationContext(), "Sorry, the task is not ready yet!", Toast.LENGTH_SHORT).show();
+			return;
+		}
 		switchActivity(position);
 	}
 }
