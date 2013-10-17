@@ -24,11 +24,11 @@ public class NewYork extends Mission{
 				new Carmines()
 		};
 		task_names = new String[]{
-				"Metropolitan Museum of Art", "MOMA", 
+				"Metropolitan Museum of Art", "MoMA", 
 				"Brooklyn Bridge", "Broadway",
 				"Flatiron Building", "Central Park",
 				"Trinity Church", "Wall Street",
-				"United Nation", "The Morgan Library and Museum",
+				"United Nation", "The Morgan Library & Museum",
 				"Carmine's"
 		};
 		task_images = new int[]{

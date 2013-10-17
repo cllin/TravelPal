@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -33,10 +34,12 @@ public class QAndAActivity extends Activity implements OnClickListener{
 
 //	TODO
 	private void setView(){
+		ImageView questionImage = (ImageView)findViewById(R.id.imageview_questions);
 		if(mTask.getIsQnAHasImage()){
-			ImageView question = (ImageView)findViewById(R.id.imageview_questions);
-//			question.setPadding(5, 5, 5, 5);
-			question.setBackgroundResource(mTask.getQnAImage());
+			questionImage.setBackgroundResource(mTask.getQnAImage());
+		}else{
+			ViewGroup viewGroup = (ViewGroup)questionImage.getParent();
+			viewGroup.removeView(questionImage);
 		}
 		
 		ImageView imageView = (ImageView)findViewById(R.id.imageview_qanda);
