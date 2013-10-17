@@ -67,10 +67,19 @@ public class MissionActivity extends Activity implements OnItemClickListener{
 	@Override
 	public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
 //		TODO
-//		Only Brooklyn Bridge is available now
-		if(position != 0){
-			Toast.makeText(getApplicationContext(), "Sorry, the task is not ready yet!", Toast.LENGTH_SHORT).show();
-			return;
+//		Not all tasks are available now
+		switch(position){
+		case 0:
+			break;
+		case 1:
+			break;
+		case 2:
+			break;
+		case 10:
+			break;
+			default:
+				Toast.makeText(getApplicationContext(), "Sorry, the task is not ready yet!", Toast.LENGTH_SHORT).show();
+				return;
 		}
 		switchActivity(position);
 	}

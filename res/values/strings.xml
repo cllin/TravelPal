@@ -23,8 +23,6 @@
 	<string name="task_instruction_and">AND</string>
 	
 	<!-- Q & A Questions -->
-	<string name="qanda_question_metromuseumofart">TODO</string>
-	<string name="qanda_question_museumofmodernart">Which of these facts about this stunning painting, "The Starry Night", are TRUE?</string>
 	<string name="qanda_question_broadway">TODO</string>
 	<string name="qanda_question_flatiron">The original name of the Flatiron Building was?</string>
 	<string name="qanda_question_centralpark">One of the many jewels of Central Park is the Bethesda Fountain, and the centerpiece of the fountain is a sculpture by Emma Stebbins. What is the name of this beautiful sculpture?</string>
@@ -34,18 +32,6 @@
 	<string name="qanda_question_morganlibrary">TODO</string>
 	
 	<!-- Q & A Answers -->
-	<string-array name="qanda_answer_metromuseumofart">
-		<item>TODO</item>
-		<item>TODO</item>
-		<item>TODO</item>
-		<item>TODO</item>
-	</string-array>	
-	<string-array name="qanda_answer_museumofmodernart">
-		<item>It was painted by Vincent Van Gogh</item>
-		<item>The painting depicts a star-filled night sky, cypress trees, and a distant village</item>
-		<item>It was painted in 1889</item>
-		<item>All of above</item>
-	</string-array>	
 	<string-array name="qanda_answer_broadway">
 		<item>TODO</item>
 		<item>TODO</item>

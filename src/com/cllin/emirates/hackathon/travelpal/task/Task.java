@@ -12,6 +12,8 @@ public class Task implements Serializable{
 	
 	String QnAQuestion = new String();
 	String[] QnAOptions = new String[4];
+	boolean isQnAHasImage = false;
+	int mQnAImage = -1;
 	
 	public void setMyImage(int image){
 		mImage = image;
@@ -35,5 +37,13 @@ public class Task implements Serializable{
 	
 	public String getMyName(){
 		return mName;
+	}
+	
+	public boolean getIsQnAHasImage(){
+		return isQnAHasImage;
+	}
+	
+	public int getQnAImage(){
+		return mQnAImage;
 	}
 }

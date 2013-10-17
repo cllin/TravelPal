@@ -33,6 +33,12 @@ public class QAndAActivity extends Activity implements OnClickListener{
 
 //	TODO
 	private void setView(){
+		if(mTask.getIsQnAHasImage()){
+			ImageView question = (ImageView)findViewById(R.id.imageview_questions);
+//			question.setPadding(5, 5, 5, 5);
+			question.setBackgroundResource(mTask.getQnAImage());
+		}
+		
 		ImageView imageView = (ImageView)findViewById(R.id.imageview_qanda);
 		imageView.setBackgroundResource(mTask.getMyImage());
 		

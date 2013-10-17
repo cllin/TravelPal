@@ -13,7 +13,7 @@ public class MissionList {
 	};
 	
 	private static final String[] mission_names = {
-		"SanFrancisco", "NewYork",
+		"San Francisco", "New York",
 		"Honolulu", "Seattle",
 		"Vegas"
 	};

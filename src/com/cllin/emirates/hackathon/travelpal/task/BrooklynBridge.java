@@ -18,24 +18,4 @@ public class BrooklynBridge extends Task {
 				"180", "130", "90", "50"
 		};
 	}
-	
-	public void setMyImage(int image){
-		mImage = image;
-	}
-	
-	public int getMyImage(){
-		return mImage;
-	}
-	
-	public String[] getDescriptions(){
-		return descriptions;
-	}
-	
-	public String getQuestion(){
-		return QnAQuestion;
-	}
-	
-	public String[] getOptions(){
-		return QnAOptions;
-	}
 }
