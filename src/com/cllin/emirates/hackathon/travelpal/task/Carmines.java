@@ -8,9 +8,9 @@ public class Carmines extends Task {
 		mName = "Carmine's";
 		mImage = R.drawable.carmines;
 		descriptions = new String[]{
-				"Order the daily special with 15% off discount and take a picture of it",	
+				"You will be able to order daily special with 15% off if you answer the question correctly",	
 				"Locate yourself in the lobby",
-				"Answer the question"
+				"Take a picture of your favorite Carmine's dish"
 		};
 		
 		QnAQuestion = "What kind of cusine does Carmine's provide?";
